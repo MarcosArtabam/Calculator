@@ -3,35 +3,53 @@ import 'dart:html';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
+import 'button.dart';
+import 'button_row.dart';
 
 class keyboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      height: 450,
       child: Column(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(1.0),
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text('1'),
+          ButtonRow([
+            Button.big(
+              text: 'AC',
+              color: Color.fromARGB(236, 22, 22, 22),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(1.0),
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text('2'),
+            Button.operation(text: '%'),
+            Button.operation(text: '/'),
+          ]),
+          ButtonRow([
+            Button(text: '7'),
+            Button(text: '8'),
+            Button(text: '9'),
+            Button.operation(text: 'x'),
+          ]),
+          ButtonRow([
+            Button(text: '4'),
+            Button(text: '5'),
+            Button(text: '6'),
+            Button.operation(text: '-'),
+          ]),
+          ButtonRow([
+            Button(text: '1'),
+            Button(text: '2'),
+            Button(text: '3'),
+            Button.operation(text: '+'),
+          ]),
+          ButtonRow([
+            Button.big(text: '0'),
+            Button.operation(
+              text: '.',
+              color: Color.fromARGB(255, 5, 5, 5),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(1.0),
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text('3'),
+            Button.operation(
+              text: '=',
+              color: Color.fromARGB(255, 68, 73, 82),
             ),
-          ),
+          ]),
         ],
       ),
     );

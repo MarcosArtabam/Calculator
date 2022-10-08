@@ -7,13 +7,15 @@ class Calculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Column(
-        children: <Widget>[
-          Display('123'),
-          keyboard(),
-        ],
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          backgroundColor: Color.fromARGB(255, 39, 39, 39),
+          body: Column(
+            children: <Widget>[
+              Display('0'),
+              keyboard(),
+            ],
+          ),
+        ));
   }
 }
